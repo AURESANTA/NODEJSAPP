@@ -1,0 +1,19 @@
+<%- include('partials/head') %> <%- include('partials/nav') %>
+
+<h1>Voici les dernières annonces !</h1>
+
+<ul>
+  <% annonces.forEach((annonce) => { %>
+  <li>
+    Nom: <a href="/show/<%= annonce._id %>"> <%= annonce.titre %> </a>
+    Description: <%= annonce.description %>
+
+    <a href="/update/<%= annonce._id %>">Update</a>
+
+
+    <button type="button" onclick="deleteAnnonceByID('<%= annonce._id %>')">
+      Supprimer
+    </button>
+  </li>
+  <% }) %>
+</ul>
